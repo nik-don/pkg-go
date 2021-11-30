@@ -1,3 +1,9 @@
+/* Package filereadwrite 
+
+github.com/nik-don/pkg-go/filereadwrite
+
+*/
+
 package filereadwrite
 
 import (
