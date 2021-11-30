@@ -1,4 +1,4 @@
-/* Package urlread 
+/* Package urlread
 
 github.com/nik-don/pkg-go/urlread
 */
@@ -6,12 +6,11 @@ package urlread
 
 import (
 	"bufio"
-	"fmt"
 	"io"
 	"net/http"
 )
 
-//LinesFromReader accepts argument of io.Reader, which is an interface 
+//LinesFromReader accepts argument of io.Reader, which is an interface
 //and return a slice of string of the lines (from URL).
 func LinesFromReader(r io.Reader) ([]string, error) {
 	var lines []string
