@@ -10,8 +10,8 @@ import (
 	"net/http"
 )
 
-//LinesFromReader accepts argument of io.Reader, which is an interface
-//and return a slice of string of the lines (from URL).
+// LinesFromReader accepts argument of io.Reader, which is an interface
+// and return a slice of string of the lines.
 func LinesFromReader(r io.Reader) ([]string, error) {
 	var lines []string
 	scanner := bufio.NewScanner(r)
@@ -25,6 +25,7 @@ func LinesFromReader(r io.Reader) ([]string, error) {
 	return lines, nil
 }
 
+// GetFromURL returns a slice of string of in the form of lines from a URL
 func GetFromURL(URL string) ([]string, error) {
 
 	response, err := http.Get(URL)
