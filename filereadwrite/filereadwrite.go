@@ -47,3 +47,24 @@ func WriteLines(lines []string, path string) error {
 	}
 	return w.Flush()
 }
+
+// AppendLines appends a line of text to the given file. 
+// It creates the file if it doesn’t already exist
+func AppendLines(lines []string, path string) error {
+	file, err := os.OpenFile(path,
+		os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	w := bufio.NewWriter(file)
+	for i, line := range lines {
+		if i == len(lines)-1 {
+			fmt.Fprint(w, line)
+		} else {
+			fmt.Fprintln(w, line)
+		}
+	}
+	return w.Flush()
+}
